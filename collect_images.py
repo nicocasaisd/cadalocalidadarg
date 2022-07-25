@@ -6,6 +6,7 @@ import mercantile
 import os
 import random
 import geopandas as gpd
+from config import create_api
 
 def get_random_loc(geojson_path):
     geojson = gpd.read_file(geojson_path)
@@ -129,7 +130,7 @@ def make_square_range(x_tile_range, y_tile_range):
     return x_tile_range, y_tile_range
 
 if __name__ == "__main__":
-    clear_dirs('satellite_images', 'composite_images')
+    #clear_dirs('satellite_images', 'composite_images')
 
 
     loc = get_random_loc('localidad.geojson')
@@ -144,3 +145,9 @@ if __name__ == "__main__":
 
     get_images(x_tile_range, y_tile_range, zoom)
     compose_image('localidad', x_tile_range, y_tile_range)
+
+    # Post tweet
+    api = create_api()
+    filename = "composite_images/localidad.png"
+    status = loc['nombre']+', '+loc['nom_depto'] +', '+loc['nom_pcia']
+    api.update_status_with_media(status, filename)
