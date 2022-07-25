@@ -130,7 +130,7 @@ def make_square_range(x_tile_range, y_tile_range):
     return x_tile_range, y_tile_range
 
 if __name__ == "__main__":
-    #clear_dirs('satellite_images', 'composite_images')
+    clear_dirs('satellite_images', 'composite_images')
 
 
     loc = get_random_loc('localidad.geojson')
