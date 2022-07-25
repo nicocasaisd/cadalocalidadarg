@@ -40,8 +40,8 @@ def get_tile_range(top_left, bottom_right, zoom):
     return x_tile_range, y_tile_range
 
 def get_access_token():
-    #access_token = os.environ('ACCESS_TOKEN')
-    access_token = 'pk.eyJ1Ijoibmljb2Nhc2Fpc2QiLCJhIjoiY2w1cjVneDJ0MDJqcjNibXE4a2QzN2Z3OSJ9.Pa9PIQE9IgnUAiR2452_WQ'
+    access_token = os.environ('MAPBOX_ACCESS_TOKEN')
+    #access_token = 'pk.eyJ1Ijoibmljb2Nhc2Fpc2QiLCJhIjoiY2w1cjVneDJ0MDJqcjNibXE4a2QzN2Z3OSJ9.Pa9PIQE9IgnUAiR2452_WQ'
     return access_token
 
 def get_images(x_tile_range, y_tile_range, zoom):
