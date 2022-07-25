@@ -143,4 +143,4 @@ if __name__ == "__main__":
 
 
     get_images(x_tile_range, y_tile_range, zoom)
-    compose_image('220725-1', x_tile_range, y_tile_range)
+    compose_image('localidad', x_tile_range, y_tile_range)
