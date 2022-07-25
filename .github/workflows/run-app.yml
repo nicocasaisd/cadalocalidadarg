@@ -26,11 +26,8 @@ jobs:
     - name: Run Retweet Bot
       run: |-
         python collect_images.py
-#      env:
-#        CONSUMER_KEY: ${{secrets.CONSUMER_KEY}}
-#        CONSUMER_SECRET: ${{secrets.CONSUMER_SECRET}}
-#        ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
-#        ACCESS_TOKEN_SECRET: ${{secrets.ACCESS_TOKEN_SECRET}}
+      env:
+        MAPBOX_ACCESS_TOKEN: ${{secrets.MAPBOX_ACCESS_TOKEN}}
     - name: Tweet Media
       run: |-
         python tweet_media.py
