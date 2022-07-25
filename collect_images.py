@@ -132,7 +132,7 @@ if __name__ == "__main__":
     clear_dirs('satellite_images', 'composite_images')
 
 
-    loc = get_random_loc('minlocalidad.geojson')
+    loc = get_random_loc('localidad.geojson')
     zoom = 15
     print(loc['nombre'])
     top_left, bottom_right = square_area_from_point(loc.geometry, 0.01)
