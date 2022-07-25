@@ -1,0 +1,33 @@
+
+name: Run Bot
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron:  '1 0 * * *'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Run Retweet Bot
+      run: |-
+        python busqued-bot.py
+      env:
+        CONSUMER_KEY: ${{secrets.CONSUMER_KEY}}
+        CONSUMER_SECRET: ${{secrets.CONSUMER_SECRET}}
+        ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
+        ACCESS_TOKEN_SECRET: ${{secrets.ACCESS_TOKEN_SECRET}}
