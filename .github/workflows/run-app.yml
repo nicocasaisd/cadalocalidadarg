@@ -31,3 +31,13 @@ jobs:
 #        CONSUMER_SECRET: ${{secrets.CONSUMER_SECRET}}
 #        ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
 #        ACCESS_TOKEN_SECRET: ${{secrets.ACCESS_TOKEN_SECRET}}
+    - name: Tweet Media
+      run: |-
+        python tweet_media.py
+      env:
+        CONSUMER_KEY: ${{secrets.CONSUMER_KEY}}
+        CONSUMER_SECRET: ${{secrets.CONSUMER_SECRET}}
+        ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
+        ACCESS_TOKEN_SECRET: ${{secrets.ACCESS_TOKEN_SECRET}}
+
+
