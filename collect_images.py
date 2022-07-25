@@ -149,5 +149,5 @@ if __name__ == "__main__":
     # Post tweet
     api = create_api()
     filename = "composite_images/localidad.png"
-    status = loc['nombre']+', '+loc['nom_depto'] +', '+loc['nom_pcia']
+    status = 'Localidad: '+loc['nombre']+'\nDepartamento: '+loc['nom_depto']+'\nProvincia: '+loc['nom_pcia']
     api.update_status_with_media(status, filename)
