@@ -5,4 +5,4 @@ if __name__ == "__main__":
     api = create_api()
     filename = "composite_images/localidad.png"
     status = "Prueba"
-    api.media_upload(filename)
+    api.update_status_with_media(status, filename)
