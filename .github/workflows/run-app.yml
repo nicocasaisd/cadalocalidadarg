@@ -25,9 +25,9 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Run Retweet Bot
       run: |-
-        python busqued-bot.py
-      env:
-        CONSUMER_KEY: ${{secrets.CONSUMER_KEY}}
-        CONSUMER_SECRET: ${{secrets.CONSUMER_SECRET}}
-        ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
-        ACCESS_TOKEN_SECRET: ${{secrets.ACCESS_TOKEN_SECRET}}
+        python collect-images.py
+#      env:
+#        CONSUMER_KEY: ${{secrets.CONSUMER_KEY}}
+#        CONSUMER_SECRET: ${{secrets.CONSUMER_SECRET}}
+#        ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
+#        ACCESS_TOKEN_SECRET: ${{secrets.ACCESS_TOKEN_SECRET}}
