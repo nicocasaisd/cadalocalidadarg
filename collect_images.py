@@ -140,7 +140,8 @@ if __name__ == "__main__":
     print(top_left)
     print(bottom_right)
     x_tile_range, y_tile_range = get_tile_range(top_left, bottom_right, zoom)
-    
+    print(f"nro de tiles en x: {x_tile_range[1]-x_tile_range[0]}")
+    print(f"nro de tiles en y: {y_tile_range[1]-y_tile_range[0]}")
 
 
     get_images(x_tile_range, y_tile_range, zoom)
