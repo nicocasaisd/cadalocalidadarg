@@ -8,12 +8,12 @@ DEVELOPMENT = False
 
 if __name__ == "__main__":
 
-    #clear_dirs('satellite_images', 'composite_images')
+    clear_dirs('satellite_images', 'composite_images')
 
-    geojson = gpd.read_file('data/localidad.geojson')
-    loc = geojson.iloc[1445]
+    #geojson = gpd.read_file('data/localidad.geojson')
+    #loc = geojson.iloc[1445]
 
-    #loc = get_random_loc('data/localidad.geojson')
+    loc = get_random_loc('data/localidad.geojson')
     
     print(loc['nombre'])
 
