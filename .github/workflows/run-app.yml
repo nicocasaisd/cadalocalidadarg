@@ -25,7 +25,7 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Run Bot
       run: |-
-        python collect_images.py
+        python main.py
       env:
         MAPBOX_ACCESS_TOKEN: ${{secrets.MAPBOX_ACCESS_TOKEN}}
         CONSUMER_KEY: ${{secrets.CONSUMER_KEY}}
