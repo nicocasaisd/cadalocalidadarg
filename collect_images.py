@@ -8,6 +8,8 @@ import random
 import geopandas as gpd
 from config import create_api
 
+
+
 def get_random_loc(geojson_path):
     geojson = gpd.read_file(geojson_path)
     rand_index = random.randrange(1, len(geojson))
@@ -128,7 +130,7 @@ def make_square_range(x_tile_range, y_tile_range):
 
     return x_tile_range, y_tile_range
 
-if __name__ == "__main__":
+""" if __name__ == "__main__":
     clear_dirs('satellite_images', 'composite_images')
 
 
@@ -151,3 +153,4 @@ if __name__ == "__main__":
     filename = "composite_images/localidad.png"
     status = "\U0001F4CD"+loc['nombre']+', '+loc['nom_depto'] +', '+loc['nom_pcia']
     api.update_status_with_media(status, filename)
+ """
