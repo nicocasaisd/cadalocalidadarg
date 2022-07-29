@@ -60,4 +60,5 @@ if __name__ == "__main__":
     #Post response tweet
     if(DEVELOPMENT == False):
         filename_path = 'composite_images/'+filename+'.jpeg'
+        status = ''
         api.update_status_with_media(status, filename_path, in_reply_to_status_id=first_tweet.id, lat=loc['lat_gd'], long=loc['long_gd'])
