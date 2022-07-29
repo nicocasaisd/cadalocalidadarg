@@ -57,7 +57,7 @@ def get_images(x_tile_range, y_tile_range, zoom):
             # Call the URL to get the image back
             r =requests.get('https://api.mapbox.com/v4/mapbox.satellite/'+str(zoom)+'/'
             +str(x)+'/'+str(y)+'@2x.pngraw?access_token='+access_token, stream=True)   
-            with open('./satellite_images/' + str(i) + '.' + str(j) + '.png', 'wb') as f:
+            with open('./satellite_images/' + str(i) + '.' + str(j) + '.jpeg', 'wb') as f:
                 r.raw.decode_content = True
                 shutil.copyfileobj(r.raw, f)
 
@@ -93,14 +93,14 @@ def compose_image(img_name, x_tile_range, y_tile_range):
         for j in range(0,edge_length_y):        
              # Open up the image file and paste it into the composed
              # image at the given offset position
-            tmp_img = Image.open('./satellite_images/' + str(i) +  '.' + str(j) + '.png')
+            tmp_img = Image.open('./satellite_images/' + str(i) +  '.' + str(j) + '.jpeg')
             composite.paste(tmp_img, (y_offset,x_offset))
             x_offset += width # Update the width
             
         y_offset += height # Update the height
 
     # Save the final image
-    composite.save('./composite_images/'+img_name+'.png')
+    composite.save('./composite_images/'+img_name+'.jpeg')
 
 def make_square_range(x_tile_range, y_tile_range):
     # prueba para hacer cuadrado el marco de la imagen
