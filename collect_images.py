@@ -12,7 +12,7 @@ from config import create_api
 
 def get_random_loc(geojson_path):
     geojson = gpd.read_file(geojson_path)
-    rand_index = random.randrange(1, len(geojson))
+    rand_index = random.randrange(1, len(geojson)+1)
     random_loc = geojson.iloc[rand_index]
 
     return random_loc
