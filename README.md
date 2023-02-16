@@ -28,6 +28,7 @@ compose_image(filename, x_tile_range, y_tile_range)
 ```
 
 #### Primera imagen generada
+
 Se informa el nombre de la localidad, el departamento y la provincia.
 
 ![image](https://user-images.githubusercontent.com/76565736/207739274-55f9c3f5-6130-4481-ab8c-db8990de5d9a.png)
