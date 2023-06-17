@@ -41,3 +41,4 @@ Se responde con una segunda imagen con un nivel mayor de zoom.
 ## Automatización con Github Actions
 
 El bot realiza las publicaciones en twitter cada 2 horas utilizando los servicios de Github Actions.
+
