@@ -37,7 +37,6 @@ Se informa el nombre de la localidad, el departamento y la provincia.
 Se responde con una segunda imagen con un nivel mayor de zoom.
 ![image](https://user-images.githubusercontent.com/76565736/207739350-a149bdde-78e5-49b7-b1d2-21c107e10e06.png)
 
-
 ## Automatización con Github Actions
 
 El bot realiza las publicaciones en twitter cada 2 horas utilizando los servicios de Github Actions.
