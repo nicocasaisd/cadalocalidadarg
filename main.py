@@ -1,5 +1,5 @@
 import geopandas as gpd
-from config import create_api
+from config import create_api, create_api_v2
 from collect_images import get_random_loc, square_area_from_point, get_tile_range, get_images, compose_image, clear_dirs
 
 
@@ -36,10 +36,14 @@ if __name__ == "__main__":
     # Post tweet
     if(DEVELOPMENT == False):
         api = create_api()
+        client = create_api_v2()
         filename_path = 'composite_images/'+filename+'.jpeg'
         status = "\U0001F4CD"+loc['nombre']+', '+loc['nom_depto'] +', '+loc['nom_pcia']
-        first_tweet = api.update_status_with_media(status, filename_path, lat=loc['lat_gd'], long=loc['long_gd'])
-        print(f"first tweet: {first_tweet.id}")
+        #first_tweet = api.update_status_with_media(status, filename_path, lat=loc['lat_gd'], long=loc['long_gd'])
+        # ver algo con geo reverse: , lat=loc['lat_gd'], long=loc['long_gd']
+        media_info = api.media_upload(filename=filename_path)
+        first_tweet = client.create_tweet(text=status, media_ids=[media_info.media_id])
+        print(f"first tweet: {first_tweet.data['id']}")
     # Obtengo imagenes con zoom=16 y area=0.005
     zoom=16
     area=0.005
