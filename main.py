@@ -65,4 +65,7 @@ if __name__ == "__main__":
     if(DEVELOPMENT == False):
         filename_path = 'composite_images/'+filename+'.jpeg'
         status = ''
-        api.update_status_with_media(status, filename_path, in_reply_to_status_id=first_tweet.id, lat=loc['lat_gd'], long=loc['long_gd'])
+        #api.update_status_with_media(status, filename_path, in_reply_to_status_id=first_tweet.id, lat=loc['lat_gd'], long=loc['long_gd'])
+        media_info = api.media_upload(filename=filename_path)
+        second_tweet = client.create_tweet(text=status, media_ids=[media_info.media_id], in_reply_to_tweet_id=first_tweet.data['id'])
+        print(f"seconda tweet: {second_tweet.data['id']}")
