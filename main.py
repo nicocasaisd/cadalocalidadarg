@@ -41,7 +41,7 @@ if __name__ == "__main__":
     #first_tweet = api.update_status_with_media(status, filename_path, lat=loc['lat_gd'], long=loc['long_gd'])
     # ver algo con geo reverse: , lat=loc['lat_gd'], long=loc['long_gd']
     #Create place id
-    place_id = api.search_geo(lat=loc['lat_gd'], long=loc['long_gd'], max_results=1)
+    place_id = api.reverse_geocode(lat=loc['lat_gd'], long=loc['long_gd'], max_results=1)
     print(f"place_id: {place_id}")
 
     if(DEVELOPMENT == False):
