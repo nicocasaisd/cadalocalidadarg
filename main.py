@@ -3,7 +3,7 @@ from config import create_api, create_api_v2
 from collect_images import get_random_loc, square_area_from_point, get_tile_range, get_images, compose_image, clear_dirs
 
 
-DEVELOPMENT = True
+DEVELOPMENT = False
 
 
 if __name__ == "__main__":
@@ -39,10 +39,6 @@ if __name__ == "__main__":
     filename_path = 'composite_images/'+filename+'.jpeg'
     status = "\U0001F4CD"+loc['nombre']+', '+loc['nom_depto'] +', '+loc['nom_pcia']
     #first_tweet = api.update_status_with_media(status, filename_path, lat=loc['lat_gd'], long=loc['long_gd'])
-    # ver algo con geo reverse: , lat=loc['lat_gd'], long=loc['long_gd']
-    #Create place id
-    place_id = api.reverse_geocode(lat=loc['lat_gd'], long=loc['long_gd'], max_results=1)
-    print(f"place_id: {place_id}")
 
     if(DEVELOPMENT == False):
         media_info = api.media_upload(filename=filename_path)
