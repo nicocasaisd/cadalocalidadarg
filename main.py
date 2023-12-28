@@ -59,6 +59,7 @@ if __name__ == "__main__":
     filename = str(loc['nombre'])+'-z'+str(zoom)+'-a'+str(area)
     compose_image(filename, x_tile_range, y_tile_range)
 
+
     
     #Post response tweet
     if(DEVELOPMENT == False):
